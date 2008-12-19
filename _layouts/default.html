@@ -51,7 +51,7 @@
             </h4>
             <p>
               {% for post in site.posts %} 
-                <span>{{ post.date | date_to_string }}</span> » <a href="/macruby-tmbundles{{ post.url }}">{{ post.title }}</a><br>
+                <span>{{ post.date | date_to_string }}</span> » <a href="/macruby-tmbundle{{ post.url }}">{{ post.title }}</a><br>
               {% endfor %}
             </p>
           </div>
