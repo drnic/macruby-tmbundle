@@ -5,9 +5,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width = 750">
     <link rel="stylesheet" type="text/css" href="css/macromates.css" charset="utf-8">
-    <title>
-      MacRuby.tmbundle - TextMate bundle for MacRuby
-    </title>
+    <title>{{ page.title }}</title>
   </head>
   <body id="intro">
     <div id="wrapper">
@@ -41,7 +39,8 @@
               Blog Posts
             </h4>
             <p>
-              {% for post in site.posts %} <span>{{ post.date | date_to_string }}</span> » <a href="{{%20post.url%20}}">{{ post.title }}</a><br>
+              {% for post in site.posts %} 
+                <span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}">{{ post.title }}</a><br>
               {% endfor %}
             </p>
           </div>
