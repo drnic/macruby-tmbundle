@@ -1,5 +1,9 @@
+ENV["TM_SUPPORT_PATH"] = File.dirname(__FILE__) + "/../../SharedSupport"
 require ENV["TM_SUPPORT_PATH"] + "/lib/tm/executor"
 require ENV["TM_SUPPORT_PATH"] + "/lib/tm/save_current_document"
+
+require "pp"
+pp ENV
 
 TextMate.save_current_document
 
