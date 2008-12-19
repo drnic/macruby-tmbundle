@@ -1,4 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -33,6 +34,19 @@
           <p>
             TextMate brings Apple's approach to operating systems into the world of text editors. By bridging UNIX underpinnings and GUI, TextMate cherry-picks the best of both worlds to the benefit of expert scripters and novice users alike.
           </p>
+        </div>
+        <div id="sidebar">
+          <div class="item">
+            <!-- Blog   -->
+            <a href="/macruby-tmbundle/posts/" id="rss_feed" name="rss_feed">Blog Posts</a>
+            <h4>
+              Blog Posts
+            </h4>
+            <p>
+              {% for post in site.posts %} <span>{{ post.date | date_to_string }}</span> » <a href="{{%20post.url%20}}">{{ post.title }}</a><br>
+              {% endfor %}
+            </p>
+          </div>
         </div>
       </div>
     </div>
