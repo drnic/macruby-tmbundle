@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>table_view(:data =&gt; TableDataSource.new(${1:[
+	{ :$10 =&gt; "some data" \}
+]}), :columns =&gt; [
+	column(:id =&gt; :${10:field_id}, :title =&gt; "${11:$10}")
+])</string>
+	<key>name</key>
+	<string>table_view</string>
+	<key>scope</key>
+	<string>source.ruby.mac</string>
+	<key>tabTrigger</key>
+	<string>table</string>
+	<key>uuid</key>
+	<string>A4274485-B258-40D9-A650-FCC4BA7D2891</string>
+</dict>
+</plist>
