@@ -142,7 +142,6 @@ html>body #content {
 #sidebar .item #purchase,
 #sidebar .item #manual,
 #sidebar .item #screencasts,
-#sidebar .item #ratings,
 #sidebar .item #book,
 #sidebar .item #rss_feed,
 #sidebar .item #tickets {
@@ -161,9 +160,8 @@ html>body #content {
 #sidebar .item #manual			{ background-image: url("http://macromates.com/images/site/pdf"); }
 #sidebar .item #screencasts	{ background-image: url("http://macromates.com/images/site/quicktime"); }
 #sidebar .item #book				{ background-image: url("http://macromates.com/images/site/book"); }
-#sidebar .item #ratings			{ background-image: url("http://macromates.com/images/site/ratings"); }
 #sidebar .item #rss_feed		{ background-image: url("http://macromates.com/images/site/rss"); }
-#sidebar .item #tickets 		{ background-image: url("http://farm3.static.flickr.com/2266/2282529914_d4d6bcc95f_s.jpg"); }
+#sidebar .item #tickets 		{ background-image: url("http://macromates.com/images/site/ratings"); }
 
 
 #footer {
