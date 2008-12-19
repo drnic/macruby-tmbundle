@@ -11,7 +11,7 @@
 	<key>name</key>
 	<string>table_view</string>
 	<key>scope</key>
-	<string>source.ruby.mac</string>
+	<string>source.ruby.mac.hotcocoa</string>
 	<key>tabTrigger</key>
 	<string>table</string>
 	<key>uuid</key>

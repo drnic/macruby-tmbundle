@@ -10,7 +10,7 @@ end</string>
 	<key>name</key>
 	<string>application</string>
 	<key>scope</key>
-	<string>source.ruby.mac</string>
+	<string>source.ruby.mac.hotcocoa</string>
 	<key>tabTrigger</key>
 	<string>app</string>
 	<key>uuid</key>

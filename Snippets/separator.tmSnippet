@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>separator</string>
 	<key>scope</key>
-	<string>source.ruby.mac</string>
+	<string>source.ruby.mac.hotcocoa</string>
 	<key>tabTrigger</key>
 	<string>sep</string>
 	<key>uuid</key>

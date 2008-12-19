@@ -9,7 +9,7 @@ end</string>
 	<key>name</key>
 	<string>submenu</string>
 	<key>scope</key>
-	<string>source.ruby.mac</string>
+	<string>source.ruby.mac.hotcocoa</string>
 	<key>tabTrigger</key>
 	<string>sub</string>
 	<key>uuid</key>

@@ -2,11 +2,48 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>B13CCAD8-2628-469F-9061-6957539C8B9C</string>
+			<string>------------------------------------</string>
+			<string>1BE4B878-FEDC-487E-9813-2288D5CCCEA6</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>1BE4B878-FEDC-487E-9813-2288D5CCCEA6</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>847B813C-0A89-492D-8FBC-5D232DFBAD2E</string>
+					<string>4B71F3EA-F6C5-4067-AF48-7FBCA1B735C3</string>
+				</array>
+				<key>name</key>
+				<string>Not Working</string>
+			</dict>
+			<key>B13CCAD8-2628-469F-9061-6957539C8B9C</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>85DD4522-0311-4FA2-B26F-800FE1BCFD94</string>
+					<string>441917AF-9555-481D-99CD-251D2C557E39</string>
+					<string>F04D47B8-E673-4442-BA52-F65D775C0673</string>
+					<string>886B8CF5-587E-4BAD-9AB8-88ECDB18A81D</string>
+					<string>56FE4440-A66B-49BE-92DE-18CF4945B13B</string>
+					<string>A4274485-B258-40D9-A650-FCC4BA7D2891</string>
+				</array>
+				<key>name</key>
+				<string>HotCocoa</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>name</key>
 	<string>MacRuby</string>
 	<key>ordering</key>
 	<array>
 		<string>2B513604-00DE-4EA9-9216-5DE83E832B4D</string>
+		<string>AF0A8ACE-1252-4725-A77B-37901E38C5EA</string>
 		<string>85DD4522-0311-4FA2-B26F-800FE1BCFD94</string>
 		<string>441917AF-9555-481D-99CD-251D2C557E39</string>
 		<string>F04D47B8-E673-4442-BA52-F65D775C0673</string>
