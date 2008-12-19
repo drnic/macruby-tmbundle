@@ -5,7 +5,7 @@ title: Running MacRuby inside TextMate
 
 In normal Ruby files, Cmd+R will run the ruby script and output any STDOUT to an HTML-based window. If the file is a MacRuby script, then we want it to run through `macruby` instead.
 
-My initial attempt was to clone over the Ruby.tmbundle's Run command, and all its Support files, change $TM_RUBY from `ruby` to `macruby` and watch awesomeness unfold.
+My initial attempt was to clone over the Ruby.tmbundle's Run command, and all its Support files, change `$TM_RUBY` from `ruby` to `macruby` and watch awesomeness unfold.
 
 Unfortunately, awesomeness had to wait. The ruby files had some ruby 1.9 incompatibilities. So I fixed those (no more $KCODE, etc). Then big challenges were discovered. There are ruby 1.9 incompatibilities, and perhaps macruby incompatibilities within TextMate's own Support folder.
 
