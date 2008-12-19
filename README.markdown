@@ -12,6 +12,17 @@ To install via Git:
 
 Source can be viewed or forked via GitHub: [http://github.com/drnic/macruby-tmbundle/tree/master](http://github.com/drnic/macruby-tmbundle/tree/master)
 
+MacRuby & Ruby 1.9 support
+==========================
+
+This bundle also attempts to upgrade all of TextMate's `Support/lib/*.rb` files and many of the Ruby.tmbundle's Commands to work with MacRuby. This means:
+
+* using `macruby` instead of `ruby` as `$TM_RUBY`
+* cleaning up `Support/lib` code to be ruby1.9 compliant (TextMate's `Support` folder has been copied into bundle as `SharedSupport` folder)
+* fixing plist.bundle for ruby1.9
+
+Currently Cmd+R (Run) and Ctrl+Shift+R (Run Rake Task) have been attempted, but both are failing.
+
 Authors
 =======
 
