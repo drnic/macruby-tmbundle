@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width = 750">
+    <link rel="stylesheet" type="text/css" href="css/macromates.css" charset="utf-8">
+    <title>
+      MacRuby.tmbundle - TextMate bundle for MacRuby
+    </title>
+  </head>
+  <body id="intro">
+    <div id="wrapper">
+      <div id="header" onclick="javascript:window.location='/macruby-tmbundle/'">
+        <h1>
+          MacRuby.tmbundle - TextMate bundle for MacRuby
+        </h1>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li id="navi_intro">
+            <a href="/macruby-tmbundle/">Intro</a>
+          </li>
+          <li id="navi_blog">
+            <a href="/macruby-tmbundle/posts/">Blog</a>
+          </li>
+          <li id="navi_textmate">
+            <a href="http://www.macromates.com/">TextMate</a>
+          </li>
+        </ul>
+      </div>
+      <div id="page_body">
+        <div id="content">
+          {{ content }}
+        </div>
+        <div id="sidebar">
+          <div class="item">
+            <!-- Blog   -->
+            <a href="/macruby-tmbundle/posts/" id="rss_feed" name="rss_feed">Blog Posts</a>
+            <h4>
+              Blog Posts
+            </h4>
+            <p>
+              {% for post in site.posts %} <span>{{ post.date | date_to_string }}</span> » <a href="{{%20post.url%20}}">{{ post.title }}</a><br>
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
