@@ -15,6 +15,8 @@ Source can be viewed or forked via GitHub: [http://github.com/drnic/macruby-tmbu
 MacRuby & Ruby 1.9 support
 ==========================
 
+The default Ruby.tmbundle's Run and Run Rake Task commands (and all others) are executed through the default Ruby 1.8 interpreter. Instead, we want MacRuby files to be run through `macruby` instead.
+
 This bundle also attempts to upgrade all of TextMate's `Support/lib/*.rb` files and many of the Ruby.tmbundle's Commands to work with MacRuby. This means:
 
 * using `macruby` instead of `ruby` as `$TM_RUBY`
