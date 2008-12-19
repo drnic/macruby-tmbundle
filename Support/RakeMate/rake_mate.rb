@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+ENV["TM_SUPPORT_PATH"] = File.dirname(__FILE__) + "/../../SharedSupport"
+
 require "#{ENV["TM_SUPPORT_PATH"]}/lib/escape"
 require "#{ENV["TM_SUPPORT_PATH"]}/lib/ui"
 require "#{ENV["TM_SUPPORT_PATH"]}/lib/web_preview"

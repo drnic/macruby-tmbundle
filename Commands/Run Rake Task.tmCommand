@@ -5,26 +5,23 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/bin/sh
+	<string>export RUBYLIB="$TM_BUNDLE_SUPPORT/RakeMate${RUBYLIB:+:$RUBYLIB}"
+export TM_RUBY=$(which "${TM_RUBY:-macruby}")
+export TM_RAKE=$(which "${TM_RAKE:-macrake}")
 
-# BROKEN - ruby19 issue in process.rb + io.rb in SharedSupport/lib
-
-export RUBYLIB="$TM_BUNDLE_SUPPORT/RubyMate${RUBYLIB:+:$RUBYLIB}"
-export TM_RUBY=$(type -p "${TM_RUBY:-macruby}")
-
-"${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/RubyMate/run_script.rb"
+"${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/RakeMate/rake_mate.rb"
 </string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
-	<string>@r</string>
+	<string>^R</string>
 	<key>name</key>
-	<string>Run</string>
+	<string>Run Rake Task</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
 	<string>source.ruby.mac</string>
 	<key>uuid</key>
-	<string>847B813C-0A89-492D-8FBC-5D232DFBAD2E</string>
+	<string>4B71F3EA-F6C5-4067-AF48-7FBCA1B735C3</string>
 </dict>
 </plist>

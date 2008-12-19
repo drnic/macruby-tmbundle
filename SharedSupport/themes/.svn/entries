@@ -1,0 +1,43 @@
+8
+
+dir
+10349
+http://macromates.com/svn/Bundles/trunk/Support/themes
+http://macromates.com/svn/Bundles
+
+
+
+2007-12-26T22:22:27.067820Z
+8725
+Soryu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dfb7d73b-c2ec-0310-8fea-fb051d288c6d
+
+bright
+dir
+
+dark
+dir
+
+default
+dir
+
+shiny
+dir
+
+halloween
+dir
+
