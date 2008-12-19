@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>window :title =&gt; "${1:Window Title}", :frame =&gt; [${10:0}, ${11:0}, ${12:100}, ${13:100}] do |win|
+	$0
+	win.will_close { exit }
+end</string>
+	<key>name</key>
+	<string>window</string>
+	<key>scope</key>
+	<string>source.ruby.mac</string>
+	<key>tabTrigger</key>
+	<string>win</string>
+	<key>uuid</key>
+	<string>441917AF-9555-481D-99CD-251D2C557E39</string>
+</dict>
+</plist>

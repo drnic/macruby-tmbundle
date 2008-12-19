@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>application :name =&gt; "${1:App Name}" do |app|
+	# app.delegate = self
+	$0
+end</string>
+	<key>name</key>
+	<string>application</string>
+	<key>scope</key>
+	<string>source.ruby.mac</string>
+	<key>tabTrigger</key>
+	<string>app</string>
+	<key>uuid</key>
+	<string>85DD4522-0311-4FA2-B26F-800FE1BCFD94</string>
+</dict>
+</plist>
