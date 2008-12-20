@@ -12,7 +12,9 @@
 export RUBYLIB="$TM_BUNDLE_SUPPORT/RubyMate${RUBYLIB:+:$RUBYLIB}"
 export TM_RUBY=$(type -p "${TM_RUBY:-macruby}")
 
-"${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/RubyMate/run_script.rb"
+# TODO - former is preferrable but not working
+# "${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/RubyMate/run_script.rb"
+"${TM_RUBY}" "$TM_FILEPATH"
 </string>
 	<key>input</key>
 	<string>document</string>
