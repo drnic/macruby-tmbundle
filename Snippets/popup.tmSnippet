@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>popup :items =&gt; ${1:[${2:'An item'}]}${5:, :layout =&gt; {:expand =&gt; :${10:width}\}}</string>
+	<key>name</key>
+	<string>popup</string>
+	<key>scope</key>
+	<string>source.ruby.mac.hotcocoa</string>
+	<key>tabTrigger</key>
+	<string>pop</string>
+	<key>uuid</key>
+	<string>886B9368-E1E5-4C75-9D54-9158C6514795</string>
+</dict>
+</plist>
