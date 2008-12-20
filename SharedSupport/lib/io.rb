@@ -71,34 +71,77 @@ end
 
 # interactive unit tests
 if $0 == __FILE__
-  require "open3"
-  #TextMate::IO.sync = false
-  #TextMate::IO.blocksize = 1
-
-  puts "1=== Line by Line"
-  stdin, stdout, stderr = Open3.popen3("echo 'foo\nbar'; echo 1>&2 bar; echo fud")
-  TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data, type|
-    puts "#{type}: “#{data.rstrip}”"
-  end
-
-  puts "2---"
-  stdin, stdout, stderr = Open3.popen3('echo oof; echo 1>&2 rab; echo duf')
-  TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data|
-    puts "“#{data.rstrip}”"
-  end
   
-  # check that everything still works with sync enabled.
-  TextMate::IO.sync = true
+  require "test/unit"
+  require "stringio"
+  require "open3"
+  class TestIo < Test::Unit::TestCase
+    attr_reader :out
+    def setup
+      @out = StringIO.new      
+    end
+    
+    def test_line_by_line
+      stdin, stdout, stderr = Open3.popen3("echo 'foo\nbar'; echo 1>&2 bar; echo fud")
+      TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data, type|
+        out.puts "#{type}: '#{data.rstrip}'"
+      end
+      out.rewind
+      actual = out.read
+      
+      assert_match(/out: 'foo'/, actual)
+      assert_match(/out: 'bar'/, actual)
+      assert_match(/out: 'fud'/, actual)
+      assert_match(/err: 'bar'/, actual)
+    end
+    
+    def test_more_line_by_line
+      out.puts "2---"
+      stdin, stdout, stderr = Open3.popen3('echo oof; echo 1>&2 rab; echo duf')
+      TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data|
+        out.puts "'#{data.rstrip}'"
+      end
 
-  puts "3=== Streaming"  
-  stdin, stdout, stderr = Open3.popen3("echo 'foo\nbar'; echo 1>&2 bar; echo fud")
-  TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data, type|
-    puts "#{type}: “#{data.rstrip}”"
+      out.rewind
+      actual = out.read
+      
+      assert_match(/'oof'/, actual)
+      assert_match(/'duf'/, actual)
+      assert_match(/'rab'/, actual)
+    end
+    
+    def test_streaming
+      # check that everything still works with sync enabled.
+      TextMate::IO.sync = true
+
+      stdin, stdout, stderr = Open3.popen3("echo 'foo\nbar'; echo 1>&2 bar; echo fud")
+      TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data, type|
+        out.puts "#{type}: '#{data.rstrip}'"
+      end
+      
+      out.rewind
+      actual = out.read
+      
+      assert_match(/^out: 'foo$/, actual)
+      assert_match(/bar/, actual)
+      assert_match(/fud/, actual)
+      assert_match(/^err: 'bar'$/, actual)
+      
+    end
+    
+    def test_more_streaming
+      stdin, stdout, stderr = Open3.popen3('echo oof; echo 1>&2 rab; echo duf')
+      TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data|
+        out.puts "'#{data.rstrip}'"
+      end
+      
+      out.rewind
+      actual = out.read
+      
+      assert_match(/^'oof'$/, actual)
+      assert_match(/^'duf'$/, actual)
+      assert_match(/^'rab'$/, actual)
+    end
   end
 
-  puts "4---"
-  stdin, stdout, stderr = Open3.popen3('echo oof; echo 1>&2 rab; echo duf')
-  TextMate::IO.exhaust(:out => stdout, :err => stderr) do |data|
-    puts "“#{data.rstrip}”"
-  end
 end
