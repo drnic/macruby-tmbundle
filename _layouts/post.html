@@ -58,11 +58,15 @@
         </div>
         <div id="sidebar">
           <div class="item">
+            <!-- Download    -->
+            <a id="download">Install Bundle</a>
+            <h4>Install Bundle</h4>
+            <p>Coming soon</p>
+          </div>
+          <div class="item">
             <!-- Tickets   -->
             <a href="http://drnic.lighthouseapp.com/projects/22212-tmbundles/tickets?q=tagged%3Amacruby" id="tickets" name="tickets">Tickets</a>
-            <h4>
-              Tickets
-            </h4>
+            <h4>Tickets</h4>
             <p>
               Found a bug?<br />
               Request a feature?
@@ -71,9 +75,7 @@
           <div class="item">
             <!-- Blog   -->
             <a href="../../../atom.xml" id="rss_feed" name="rss_feed">Blog Posts</a>
-            <h4>
-              Blog Posts
-            </h4>
+            <h4>Blog Posts</h4>
             <p>
               {% for post in site.posts %} 
                 <span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}">{{ post.title }}</a><br>
