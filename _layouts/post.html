@@ -39,6 +39,25 @@
       <div id="page_body">
         <div id="content">
           {{ content }}
+                    
+          <script type="text/javascript">var disqus_url = "http://drnic.github.com/macruby-tmbundle/{{ post.url }}"; var disqus_title ="{{ post.title }}";</script>
+          <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/macruby-tmbundle/embed.js"></script>
+          <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+          <script type="text/javascript">
+          //<![CDATA[
+          (function() {
+          		var links = document.getElementsByTagName('a');
+          		var query = '?';
+          		for(var i = 0; i < links.length; i++) {
+          			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+          				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          			}
+          		}
+          		document.write('<script type="text/javascript" src="http://disqus.com/forums/macruby-tmbundle/get_num_replies.js' + query + '"></' + 'script>');
+          	})();
+          //]]>
+          </script>
+          
         </div>
         <div id="sidebar">
           <div class="item">
