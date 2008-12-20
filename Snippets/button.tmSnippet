@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>button(:title =&gt; "${1:Click me}"${2:, :type =&gt; :${3:switch}}${5:, :state =&gt; :${6:on}}) do |${10:b}|
+	$10.on_action do |$10|
+		$0
+	end
+end</string>
+	<key>name</key>
+	<string>button</string>
+	<key>scope</key>
+	<string>source.ruby.mac.hotcocoa</string>
+	<key>tabTrigger</key>
+	<string>but</string>
+	<key>uuid</key>
+	<string>0221C6D5-8C97-44A9-B8D0-1F72E99AC34B</string>
+</dict>
+</plist>
