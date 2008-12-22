@@ -9,7 +9,7 @@
 
 # BROKEN - ruby19 issue in process.rb + io.rb in SharedSupport/lib
 
-export RUBYLIB="$TM_BUNDLE_SUPPORT/RubyMate${RUBYLIB:+:$RUBYLIB}"
+#export RUBYLIB="$TM_BUNDLE_SUPPORT/RubyMate${RUBYLIB:+:$RUBYLIB}"
 export TM_RUBY=$(type -p "${TM_RUBY:-macruby}")
 
 # TODO - former is preferrable but not working
@@ -23,7 +23,7 @@ export TM_RUBY=$(type -p "${TM_RUBY:-macruby}")
 	<key>name</key>
 	<string>Run</string>
 	<key>output</key>
-	<string>showAsHTML</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.ruby.mac</string>
 	<key>uuid</key>
