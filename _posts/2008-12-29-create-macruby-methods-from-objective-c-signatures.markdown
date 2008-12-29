@@ -8,7 +8,7 @@ ability to create new methods from Objective-C signatures.
 
 To create new methods in Ruby, you can type 'def' and TAB. Now, if you copy the signature of an Objective-C method into the clipboard you can create a MacRuby version of it with the 'm' snippet.
 
-See samples:
+See samples (or [gist](http://gist.github.com/41232)):
 
 {% highlight ruby %}
 class SpeechController
