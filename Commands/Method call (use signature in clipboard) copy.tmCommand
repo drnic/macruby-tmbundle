@@ -9,21 +9,21 @@
 export TM_RUBY=$(which "${TM_RUBY:-macruby}")
 export TM_RAKE=$(which "${TM_RAKE:-macrake}")
 
-"${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/bin/paste_objc_headers.rb" method_declaration
+"${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/bin/paste_objc_headers.rb" method_call
 </string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>name</key>
-	<string>New method (use signature in clipboard)</string>
+	<string>Method call (use signature in clipboard) copy</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
 	<string>source.ruby.mac</string>
 	<key>tabTrigger</key>
-	<string>m</string>
+	<string>.m</string>
 	<key>uuid</key>
-	<string>67669B2F-ECB7-4322-89F8-69190DD12C7C</string>
+	<string>78EA9EFF-8142-4169-BF6B-024DDF71D5DF</string>
 </dict>
 </plist>

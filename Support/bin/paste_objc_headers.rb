@@ -26,9 +26,19 @@ class PasteObjcHeader
     end
   end
   
-  def to_method_call_from_full_signature(signature, options)
+  def to_method_definition(signature, options = {})
     tab_stops    = options[:tab_stops]
     class_method = (signature =~ /^\+/)
+    macruby_signature = to_method_call(signature, options)
+    <<-METHOD.gsub(/^    /, '')
+    def #{class_method ? 'self.' : ''}#{macruby_signature}
+    \t#{tab_stops ? '$0' : ''}
+    end
+    METHOD
+  end
+  
+  def to_method_call_from_full_signature(signature, options)
+    tab_stops    = options[:tab_stops]
     signature.gsub!(/[+-]\s+/, '') # remove prefix +/-
     signature.gsub!(/\([^)]+\)/, ' ') # remove data types, e.g. (NSString *),(void),(int)
     signature_parts = signature.strip.split(/\s+/)
@@ -64,15 +74,11 @@ end
 
 if __FILE__ == $0
   signature = `pbpaste`.strip
-  output_signature = PasteObjcHeader.new.to_method_call(signature, :tab_stops => true)
   output_type = ARGV.shift
-  snippet = case output_type.to_sym
-  when :method_declaration
-    <<-SNIPPET.gsub(/^    /, '')
-    def #{output_signature}
-    \t$0
-    end
-    SNIPPET
+  print snippet = case output_type.to_sym
+    when :method_call
+      "." + PasteObjcHeader.new.to_method_call(signature, :tab_stops => true)
+    when :method_declaration
+      PasteObjcHeader.new.to_method_definition(signature, :tab_stops => true)
   end
-  print snippet
 end

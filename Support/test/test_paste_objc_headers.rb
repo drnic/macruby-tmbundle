@@ -48,11 +48,15 @@ class TestPasteObjcHeaders < Test::Unit::TestCase
     end
 
     should "convert to method definition without tab stops" do
-      
+      output = @converter.to_method_definition(@signature)
+      expected = "def speechSynthesizer(sender, willSpeakWord: wordToSpeak, ofString: text)\n\t\nend\n"
+      assert_equal(expected, output)
     end
 
     should "convert to method definition with tab stops" do
-      
+      output = @converter.to_method_definition(@signature, :tab_stops => true)
+      expected = "def speechSynthesizer(${1:sender}, willSpeakWord: ${2:wordToSpeak}, ofString: ${3:text})\n\t$0\nend\n"
+      assert_equal(expected, output)
     end
   end
   
