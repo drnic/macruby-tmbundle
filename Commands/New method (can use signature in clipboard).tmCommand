@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>export RUBYLIB="$TM_BUNDLE_SUPPORT/RakeMate${RUBYLIB:+:$RUBYLIB}"
+export TM_RUBY=$(which "${TM_RUBY:-macruby}")
+export TM_RAKE=$(which "${TM_RAKE:-macrake}")
+
+"${TM_RUBY}" -- "$TM_BUNDLE_SUPPORT/bin/paste_objc_headers.rb" method_declaration
+</string>
+	<key>fallbackInput</key>
+	<string>none</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>New method (can use signature in clipboard)</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.ruby.mac</string>
+	<key>tabTrigger</key>
+	<string>m</string>
+	<key>uuid</key>
+	<string>67669B2F-ECB7-4322-89F8-69190DD12C7C</string>
+</dict>
+</plist>
