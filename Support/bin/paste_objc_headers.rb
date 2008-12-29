@@ -52,6 +52,22 @@ class PasteObjcHeader
     end
   end
   
+  # builds an equivalent pseudo-full signature (no data types) and
+  # delegates to +to_method_call_from_full_signature+
+  def to_method_call_from_short_signature(signature, options)
+    method_parts = signature.scan(/[^:]+:/)
+    if method_parts.size > 0
+      argument_name_guesses = method_parts.map do |part|
+        argument = part.gsub(/:$/,'').gsub(/\([^)]+\)/,'').gsub(/\:/, '_').strip
+        find_concept(argument)
+      end
+      full_signature = method_parts.zip(argument_name_guesses).flatten.join(" ")
+      to_method_call_from_full_signature(full_signature, options)
+    else
+      signature
+    end
+  end
+  
   # signature_parts can be a single argument name (1-element array), or an
   # array of argument parts: ['first_arg_name', 'method_bit:', 'second_arg_name', 'method_bit2:', 'third']
   def compose_arguments(signature_parts, tab_stops)
@@ -70,10 +86,24 @@ class PasteObjcHeader
       parts
     end.join(" ").gsub(/,$/,'')
   end
+  
+  def find_concept(argument)
+    splitter_words = "Change|Find|For|From|In|Of|Remove|Set|With|Will"
+    concept = if argument =~ /(?:#{splitter_words})(.*)$/
+      $1
+    elsif argument =~ /^(?:#{splitter_words})(.*)$/i
+      $1
+    else
+      argument
+    end
+    return concept[0..0].downcase + concept[1..-1]
+  end
+  
 end
 
 if __FILE__ == $0
   signature = `pbpaste`.strip
+  signature = "methodName" unless signature && signature.length > 0
   output_type = ARGV.shift
   print snippet = case output_type.to_sym
     when :method_call

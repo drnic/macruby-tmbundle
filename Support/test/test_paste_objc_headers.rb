@@ -60,6 +60,25 @@ class TestPasteObjcHeaders < Test::Unit::TestCase
     end
   end
   
+  context "short, no arguments method signature" do
+    setup do
+      @signature = 'speechSynthesizer'
+      @converter = PasteObjcHeader.new
+    end
+
+    should "convert to method invocation without tab stops" do
+      output = @converter.to_method_call(@signature)
+      expected = "speechSynthesizer"
+      assert_equal(expected, output)
+    end
+
+    should "convert to method invocation with tab stops" do
+      output = @converter.to_method_call(@signature, :tab_stops => true)
+      expected = "speechSynthesizer"
+      assert_equal(expected, output)
+    end
+
+  end
 
   context "short method signature" do
     setup do
@@ -67,20 +86,28 @@ class TestPasteObjcHeaders < Test::Unit::TestCase
       @converter = PasteObjcHeader.new
     end
 
-    should_eventually "convert to method invocation without tab stops" do
-      
+    should "convert to method invocation without tab stops" do
+      output = @converter.to_method_call(@signature)
+      expected = "speechSynthesizer(speechSynthesizer, willSpeakWord: speakWord, ofString: string)"
+      assert_equal(expected, output)
     end
 
-    should_eventually "convert to method invocation with tab stops" do
-      
+    should "convert to method invocation with tab stops" do
+      output = @converter.to_method_call(@signature, :tab_stops => true)
+      expected = "speechSynthesizer(${1:speechSynthesizer}, willSpeakWord: ${2:speakWord}, ofString: ${3:string})"
+      assert_equal(expected, output)
     end
 
-    should_eventually "convert to method definition without tab stops" do
-      
+    should "convert to method definition without tab stops" do
+      output = @converter.to_method_definition(@signature)
+      expected = "def speechSynthesizer(speechSynthesizer, willSpeakWord: speakWord, ofString: string)\n\t\nend\n"
+      assert_equal(expected, output)
     end
 
-    should_eventually "convert to method definition with tab stops" do
-      
+    should "convert to method definition with tab stops" do
+      output = @converter.to_method_definition(@signature, :tab_stops => true)
+      expected = "def speechSynthesizer(${1:speechSynthesizer}, willSpeakWord: ${2:speakWord}, ofString: ${3:string})\n\t$0\nend\n"
+      assert_equal(expected, output)
     end
   end
   
