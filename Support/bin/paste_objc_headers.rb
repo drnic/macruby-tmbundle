@@ -56,13 +56,15 @@ class PasteObjcHeader
   # delegates to +to_method_call_from_full_signature+
   def to_method_call_from_short_signature(signature, options)
     method_parts = signature.scan(/[^:]+:/)
-    if method_parts.size > 0
+    if method_parts.size > 1
       argument_name_guesses = method_parts.map do |part|
         argument = part.gsub(/:$/,'').gsub(/\([^)]+\)/,'').gsub(/\:/, '_').strip
         find_concept(argument)
       end
       full_signature = method_parts.zip(argument_name_guesses).flatten.join(" ")
       to_method_call_from_full_signature(full_signature, options)
+    elsif method_parts.size == 1
+      to_method_call_from_full_signature("#{signature} sender", options)
     else
       signature
     end

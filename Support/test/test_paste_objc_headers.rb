@@ -80,6 +80,26 @@ class TestPasteObjcHeaders < Test::Unit::TestCase
 
   end
 
+  context "short, single argument method signature" do
+    setup do
+      @signature = 'someAction:'
+      @converter = PasteObjcHeader.new
+    end
+
+    should "convert to method invocation without tab stops" do
+      output = @converter.to_method_call(@signature)
+      expected = "someAction(sender)"
+      assert_equal(expected, output)
+    end
+
+    should "convert to method invocation with tab stops" do
+      output = @converter.to_method_call(@signature, :tab_stops => true)
+      expected = "someAction(${1:sender})"
+      assert_equal(expected, output)
+    end
+
+  end
+
   context "short method signature" do
     setup do
       @signature = 'speechSynthesizer:willSpeakWord:ofString:'
